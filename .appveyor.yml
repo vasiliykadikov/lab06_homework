@@ -14,16 +14,16 @@ build_script:
 - cmd: cmake --build _build
 - cmd: cmake --build _build --target solver
 - cmd: echo "Testing solver is done"
- - cmd: cmake --build _build --target solver --config Release
- - cmd: echo "Testing solver is done"
- - cmd: cd _build
- - cmd: cpack -G WIX
+- cmd: cmake --build _build --target solver --config Release
+- cmd: echo "Testing solver is done"
+- cmd: cd _build
+- cmd: cpack -G WIX
 
- deploy:
-  description: Realese description
-  provider: GitHub
-  Authorisation: Bearer v2.2odkykmluce0cju9b55w
-  artifact: /.*\.msi/
-  draft: false
-  on:
-   APPVEYOR_REPO_TAG: true
+deploy:
+ description: Realese description
+ provider: GitHub
+ Authorisation: Bearer v2.2odkykmluce0cju9b55w
+ artifact: /.*\.msi/
+ draft: false
+ on:
+  APPVEYOR_REPO_TAG: true

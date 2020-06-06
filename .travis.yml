@@ -39,9 +39,8 @@ script:
 
 deploy:
  provider: releases
- api_key:
-   secure:     
-    MIGJAoGBAKY1mJtfyxF51Z8XSE4q/kLixEUegc4UGyP0lTH/URfJ3Yg7HzNwOXNg\nxWYtBWg8foI6H71J25iDGFYFA7ihY1GwDDlfd/RmYzBHD3nrVRdzYvvqKZgAfS9J\nvQnqfMVBRNYlP6osvgf394BvOTCrXh7WEQX6zLD0PO1wKgIEHhBzAgMBAAE=
+ api_key: M5hxd2BHhrA0ONJEuTMdWg
+ file:
   - solver_application/_build/solver-source-files.zip
   - solver_application/_build/solver-source-files.tar.gz
   - if [ "" = "osx" ]; then 
@@ -50,6 +49,6 @@ deploy:
   - if [ "" = "linux" ]; then 
       'solver_application/_build/solver.rpm'; 
     fi
- skip_cleanup: 'true'
+ cleanup: true
  on:
   tags: true
